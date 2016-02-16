@@ -18,7 +18,7 @@ public function testEmail($email, $result){
 }
 
 public function emailProvider(){
-	return array(array("test@example.com", true), array("123", false));
+	return array(array("test@prowect.com", true), array("123", false));
 }
 
 
