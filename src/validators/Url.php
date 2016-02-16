@@ -12,8 +12,6 @@ return filter_var($input, FILTER_VALIDATE_URL);
 
 }
 
-
-
 }
 
 ?>
