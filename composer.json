@@ -1,0 +1,14 @@
+{
+    "name": "drips/validator",
+    "description": "Validators zur Überprüfung von Eingaben",
+    "keywords": ["validator"],
+    "license": "MIT",
+    "require": {
+        "php": ">=5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Drips\\Validator\\": "src"
+        }
+    }
+}
