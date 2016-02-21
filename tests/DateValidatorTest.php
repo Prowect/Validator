@@ -17,7 +17,7 @@ public function testDate($date, $result){
 }
 
 public function dateProvider(){
-	return array(array("12.06.2006", true), array("32.07.2015", false), array("1.1.16", true), array("29.02.1995", true));
+	return array(array("12.06.2006", true), array("32.07.2015", false), array("1.1.16", false), array("29.02.1995", false));
 }
 
 
