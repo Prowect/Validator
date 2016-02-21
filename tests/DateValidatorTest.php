@@ -5,23 +5,26 @@ namespace tests;
 use Drips\Validator\validators\Date;
 use PHPUnit_Framework_TestCase;
 
-include(__DIR__."/../vendor/autoload.php");
+include __DIR__.'/../vendor/autoload.php';
+date_default_timezone_set('Europe/Berlin');
 
-class DateValidatorTest extends PHPUnit_Framework_TestCase {
+class DateValidatorTest extends PHPUnit_Framework_TestCase
+{
+    /**
+ 		* @dataProvider dateProvider
+ 		*/
+		public function testDate($date, $format, $result)
+		{
+    	$this->assertEquals(Date::validate($date, $format), $result);
+		}
 
-/**
- * @dataProvider dateProvider
-*/
-public function testDate($date, $result){
-	$this->assertEquals(Date::validate($date),$result);
+    public function dateProvider()
+    {
+        return array(
+    			array('12.06.2006', 'd.m.Y', true),
+    			array('32.07.2015', 'd.m.Y', false),
+    			array('28.02.1995', 'd.m.Y', true),
+    			array('30.02.1995', 'd.m.Y', false)
+				);
+    }
 }
-
-public function dateProvider(){
-	return array(array("12.06.2006", true), array("32.07.2015", false), array("1.1.16", false), array("29.02.1995", false));
-}
-
-
-
-}
-
-?>
