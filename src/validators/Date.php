@@ -10,6 +10,6 @@ class Date implements IValidator
     {
         $date = date_parse($input);
 
-        return checkdate($date['month'], $date['day'], $date['year']) !== false && $date !== false;
+        return checkdate($date['month'], $date['day'], $date['year']) && $date !== false;
     }
 }
