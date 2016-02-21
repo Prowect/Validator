@@ -9,10 +9,7 @@ class Date implements IValidator
     public static function validate($input)
     {
         $date = date_parse($input);
-        if ($date !== false) {
-            return checkdate($date['month'], $date['day'], $date['year']);
-        }
 
-        return false;
+        return checkdate($date['month'], $date['day'], $date['year']) !== false && $date !== false;
     }
 }
