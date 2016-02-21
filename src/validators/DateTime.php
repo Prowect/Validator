@@ -8,6 +8,6 @@ class DateTime implements IValidator
 {
     public static function validate($input)
     {
-      return Date::validate($input) != false && Time::validate($input) != false;
+        return Date::validate($input) != false && Time::validate($input) != false;
     }
 }
