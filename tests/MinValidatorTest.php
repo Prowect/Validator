@@ -23,7 +23,7 @@ class MinValidatorTest extends PHPUnit_Framework_TestCase
             array(1, 5, false),
             array("1", 5, false),
             array("abcde", 3, false),
-			array(-1, 5, false)
+			array(-1, 5, false),
 			array(6, 5, true),
 			array("3", 1, true)
         );
