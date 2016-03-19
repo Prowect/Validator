@@ -9,10 +9,15 @@ class Time implements IValidator
     public static function validate($input)
     {
         $time = explode(':', $input);
-        if (count($time) == 2) {
-            return mktime($time[0], $time[1]) != false;
-        } elseif (count($time) == 3) {
-            return mktime($time[0], $time[1], $time[2]) != false;
+        $size = count($time);
+        if (Between::validate($size, 2, 3)) {
+            $hours = $time[0];
+            $minutes = $time[1];
+            $seconds = $size == 3 ? $time[2] : 0;
+
+            if (Between::validate($hours, 0, 23) && Between::validate($minutes, 0, 59) && Between::validate($seconds, 0, 59)) {
+                return mktime($hours, $minutes, $seconds) !== false;
+            }
         }
 
         return false;
