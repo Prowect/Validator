@@ -14,7 +14,7 @@ class RequiredTest extends PHPUnit_Framework_TestCase
 	 */
 	public function testRequired($string, $result)
 	{
-	    $this->assertEquals(Required::filter($string), $result);
+	    $this->assertEquals(Required::validate($string), $result);
 	}
 
     public function dataProvider()
