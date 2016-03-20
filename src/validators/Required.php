@@ -1,13 +1,13 @@
 <?php
 namespace Drips\Validator\validators;
 
-use Drips\Validator\IValidator;
+use Drips\filters\Trim;
 
 class Required implements IValidator
 {
     public static function validate($input)
     {
-        $input = Trim::filter($input);
-		return !empty($input);
+        $string = Trim::filter($string);
+		      return !empty($string);
     }
 }
