@@ -2,7 +2,7 @@
 
 namespace tests;
 
-use Drips\Validator\filters\StripTags;
+use Drips\Validator\filters\HtmlEntities;
 use PHPUnit_Framework_TestCase;
 
 include __DIR__.'/../vendor/autoload.php';
