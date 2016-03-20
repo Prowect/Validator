@@ -1,7 +1,8 @@
 <?php
 namespace Drips\Validator\validators;
 
-use Drips\filters\Trim;
+use Drips\Validator\filters\Trim;
+use Drips\Validator\IValidator;
 
 class Required implements IValidator
 {
