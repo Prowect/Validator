@@ -7,7 +7,7 @@ use PHPUnit_Framework_TestCase;
 
 include __DIR__.'/../vendor/autoload.php';
 
-class TrimTest extends PHPUnit_Framework_TestCase
+class RequiredTest extends PHPUnit_Framework_TestCase
 {
 	/**
 	 * @dataProvider dataProvider
