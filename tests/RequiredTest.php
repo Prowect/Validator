@@ -2,7 +2,7 @@
 
 namespace tests;
 
-use Drips\Validator\IValidator;
+use Drips\Validator\validators\required;
 use PHPUnit_Framework_TestCase;
 
 include __DIR__.'/../vendor/autoload.php';
