@@ -4,7 +4,7 @@ namespace Drips\Validator\filters;
 
 use Drips\Validator\IFilter;
 
-class StripTagsFilter implements IFilter {
+class StripTags implements IFilter {
 
     public static function filter($input)
     {
