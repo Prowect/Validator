@@ -20,9 +20,9 @@ class HtmlEntitiesTest extends PHPUnit_Framework_TestCase
     public function dataProvider()
     {
         return array(
-            array("<strong>Test</strong>", "&lt;strong&rt;Test&lt;/strong&rt;"),
+            array("<strong>Test</strong>", "&lt;strong&gt;Test&lt;/strong&gt;"),
             array("Test", "Test"),
-            array("<script>alert('Test');</script>", "&lt;script&rt;alert('Test');&lt;/script&rt;")
+            array("<script>alert('Test');</script>", "&lt;script&gt;alert('Test');&lt;/script&gt;")
         );
     }
 }
