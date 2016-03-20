@@ -8,7 +8,7 @@ class Required implements IValidator
 {
     public static function validate($input)
     {
-        $string = Trim::filter($string);
+        $string = Trim::filter($input);
 		      return !empty($string);
     }
 }
