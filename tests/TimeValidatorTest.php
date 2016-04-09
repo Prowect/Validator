@@ -15,7 +15,8 @@ class TimeValidatorTest extends PHPUnit_Framework_TestCase
      */
     public function testTime($time, $result)
     {
-        $this->assertEquals(Time::validate($time), $result);
+        $validator = new Time;
+        $this->assertEquals($validator->validate($time), $result);
     }
 
     public function dateProvider()

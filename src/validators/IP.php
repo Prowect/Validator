@@ -6,8 +6,11 @@ use Drips\Validator\IValidator;
 
 class IP implements IValidator
 {
-    public static function validate($input)
+    public function validate($input)
     {
-      return IPv4::validate($input) || IPv6::validate($input);
+        $ipv4_validator = new IPv4;
+        $ipv6_validator = new IPv6;
+
+        return $ipv4_validator->validate($input) || $ipv6_validator->validate($input);
     }
 }

@@ -14,7 +14,8 @@ class NumberValidatorTest extends PHPUnit_Framework_TestCase
 	 */
 	public function testNumber($number, $result)
 	{
-	    $this->assertEquals(Number::validate($number), $result);
+		$validator = new Number;
+	    $this->assertEquals($validator->validate($number), $result);
 	}
 
     public function dataProvider()

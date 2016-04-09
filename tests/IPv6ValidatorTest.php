@@ -14,7 +14,8 @@ class IPv6ValidatorTest extends PHPUnit_Framework_TestCase
 	 */
 	public function testIPv6($ip, $result)
 	{
-	    $this->assertEquals(IPv6::validate($ip), $result);
+		$validator = new IPv6;
+	    $this->assertEquals($validator->validate($ip), $result);
 	}
 
     public function dataProvider()

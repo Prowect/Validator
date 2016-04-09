@@ -5,11 +5,15 @@ use Drips\Validator\IValidator;
 
 class Regex implements IValidator
 {
-    public static function validate($str, $regex = null)
+    protected $regex;
+
+    public function __construct($regex)
     {
-        if ($regex !== null) {
-            return preg_match($regex, $str);
-        }
-        return false;
+        $this->regex = $regex;
+    }
+
+    public function validate($str)
+    {
+        return preg_match($this->regex, $str);
     }
 }

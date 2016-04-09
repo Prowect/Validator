@@ -14,7 +14,8 @@ class BetweenValidatorTest extends PHPUnit_Framework_TestCase
 	 */
 	public function testBetween($text, $min, $max, $result)
 	{
-	    $this->assertEquals(Between::validate($text, $min, $max), $result);
+		$validator = new Between($min, $max);
+	    $this->assertEquals($validator->validate($text), $result);
 	}
 
     public function dataProvider()

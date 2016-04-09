@@ -14,7 +14,8 @@ class HtmlEntitiesTest extends PHPUnit_Framework_TestCase
 	 */
 	public function testHtmlEntities($string, $result)
 	{
-	    $this->assertEquals(HtmlEntities::filter($string), $result);
+		$filter = new HtmlEntities;
+	    $this->assertEquals($filter->filter($string), $result);
 	}
 
     public function dataProvider()

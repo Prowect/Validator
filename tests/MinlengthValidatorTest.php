@@ -14,7 +14,8 @@ class MinlengthValidatorTest extends PHPUnit_Framework_TestCase
 	 */
 	public function testMinlength($text, $minlength, $result)
 	{
-	    $this->assertEquals(Minlength::validate($text, $minlength), $result);
+		$validator = new Minlength($minlength);
+	    $this->assertEquals($validator->validate($text), $result);
 	}
 
     public function dataProvider()

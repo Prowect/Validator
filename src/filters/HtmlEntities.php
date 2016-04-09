@@ -6,7 +6,7 @@ use Drips\Validator\IFilter;
 
 class HtmlEntities implements IFilter {
 
-    public static function filter($input)
+    public function filter($input)
     {
         return htmlentities($input);
     }

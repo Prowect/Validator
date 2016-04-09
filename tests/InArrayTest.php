@@ -14,7 +14,8 @@ class InArrayTest extends PHPUnit_Framework_TestCase
 	 */
 	public function testInArray($string, array $array, $result)
 	{
-	    $this->assertEquals(InArray::validate($string, $array), $result);
+		$validator = new InArray($array);
+	    $this->assertEquals($validator->validate($string), $result);
 	}
 
     public function dataProvider()

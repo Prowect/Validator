@@ -5,8 +5,17 @@ use Drips\Validator\IValidator;
 
 class Min implements IValidator
 {
-    public static function validate($input, $min = 0)
+    protected $min;
+
+    public function __construct($min = 0)
     {
-		return Number::validate($input) && $input >= $min;
+        $this->min = $min;
+    }
+
+    public function validate($input)
+    {
+        $number_validator = new Number;
+
+		return $number_validator->validate($input) && $input >= $this->min;
     }
 }

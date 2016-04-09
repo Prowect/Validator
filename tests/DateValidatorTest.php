@@ -15,7 +15,8 @@ class DateValidatorTest extends PHPUnit_Framework_TestCase
      */
     public function testDate($date, $format, $result)
     {
-        $this->assertEquals(Date::validate($date, $format), $result);
+        $validator = new Date($format);
+        $this->assertEquals($validator->validate($date), $result);
     }
 
     public function dateProvider()

@@ -5,8 +5,17 @@ use Drips\Validator\IValidator;
 
 class Max implements IValidator
 {
-    public static function validate($input, $max = 0)
+    protected $max;
+
+    public function __construct($max = 0)
     {
-		return Number::validate($input) && $input <= $max;
+        $this->max = $max;
+    }
+
+    public function validate($input)
+    {
+        $number_validator = new Number;
+
+		return $number_validator->validate($input) && $input <= $this->max;
     }
 }

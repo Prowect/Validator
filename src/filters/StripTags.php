@@ -6,7 +6,7 @@ use Drips\Validator\IFilter;
 
 class StripTags implements IFilter {
 
-    public static function filter($input)
+    public function filter($input)
     {
         return strip_tags($input);
     }

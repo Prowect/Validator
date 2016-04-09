@@ -14,7 +14,8 @@ class RegexTest extends PHPUnit_Framework_TestCase
 	 */
 	public function testRegex($string, $regex, $result)
 	{
-	    $this->assertEquals(Regex::validate($string, $regex), $result);
+		$validator = new Regex($regex);
+	    $this->assertEquals($validator->validate($string), $result);
 	}
 
     public function dataProvider()

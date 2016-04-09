@@ -5,8 +5,15 @@ use Drips\Validator\IValidator;
 
 class Minlength implements IValidator
 {
-    public static function validate($input, $length = 3)
+    protected $minlength;
+
+    public function __construct($minlength = 3)
     {
-		return strlen($input) >= $length;
+        $this->minlength = $minlength;
+    }
+
+    public function validate($input)
+    {
+		return strlen($input) >= $this->minlength;
     }
 }

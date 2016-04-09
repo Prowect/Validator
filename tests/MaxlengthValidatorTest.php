@@ -14,7 +14,8 @@ class MaxlengthValidatorTest extends PHPUnit_Framework_TestCase
 	 */
 	public function testMaxlength($text, $maxlength, $result)
 	{
-	    $this->assertEquals(Maxlength::validate($text, $maxlength), $result);
+		$validator = new Maxlength($maxlength);
+	    $this->assertEquals($validator->validate($text), $result);
 	}
 
     public function dataProvider()

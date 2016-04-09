@@ -4,5 +4,5 @@ namespace Drips\Validator;
 
 interface IFilter
 {
-    public static function filter($input);
+    public function filter($input);
 }

@@ -14,7 +14,8 @@ class StripTagsTest extends PHPUnit_Framework_TestCase
 	 */
 	public function testStripTags($string, $result)
 	{
-	    $this->assertEquals(StripTags::filter($string), $result);
+		$filter = new StripTags;
+	    $this->assertEquals($filter->filter($string), $result);
 	}
 
     public function dataProvider()

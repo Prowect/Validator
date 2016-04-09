@@ -14,7 +14,8 @@ class EmailValidatorTest extends PHPUnit_Framework_TestCase
 	 */
 	public function testEmail($email, $result)
 	{
-	    $this->assertEquals(Email::validate($email), $result);
+		$validator = new Email;
+	    $this->assertEquals($validator->validate($email), $result);
 	}
 
     public function emailProvider()

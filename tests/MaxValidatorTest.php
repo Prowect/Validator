@@ -14,7 +14,8 @@ class MaxValidatorTest extends PHPUnit_Framework_TestCase
 	 */
 	public function testMax($text, $max, $result)
 	{
-	    $this->assertEquals(Max::validate($text, $max), $result);
+		$validator = new Max($max);
+	    $this->assertEquals($validator->validate($text), $result);
 	}
 
     public function dataProvider()

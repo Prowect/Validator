@@ -14,7 +14,8 @@ class TrimTest extends PHPUnit_Framework_TestCase
 	 */
 	public function testTrim($string, $character, $result)
 	{
-	    $this->assertEquals(Trim::filter($string, $character), $result);
+		$filter = new Trim($character);
+	    $this->assertEquals($filter->filter($string), $result);
 	}
 
     public function dataProvider()

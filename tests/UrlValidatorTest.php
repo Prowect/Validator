@@ -14,7 +14,8 @@ class UrlValidatorTest extends PHPUnit_Framework_TestCase
 	 */
 	public function testUrl($url, $result)
 	{
-	    $this->assertEquals(Url::validate($url), $result);
+		$validator = new Url;
+	    $this->assertEquals($validator->validate($url), $result);
 	}
 
     public function dataProvider()

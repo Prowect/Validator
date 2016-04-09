@@ -14,7 +14,8 @@ class MinValidatorTest extends PHPUnit_Framework_TestCase
 	 */
 	public function testMin($text, $min, $result)
 	{
-	    $this->assertEquals(Min::validate($text, $min), $result);
+		$validator = new Min($min);
+	    $this->assertEquals($validator->validate($text), $result);
 	}
 
     public function dataProvider()

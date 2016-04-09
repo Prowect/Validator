@@ -14,7 +14,8 @@ class IPValidatorTest extends PHPUnit_Framework_TestCase
 	 */
 	public function testIP($ip, $result)
 	{
-	    $this->assertEquals(IP::validate($ip), $result);
+		$validator = new IP;
+	    $this->assertEquals($validator->validate($ip), $result);
 	}
 
     public function dataProvider()

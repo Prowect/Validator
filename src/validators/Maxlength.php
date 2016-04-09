@@ -6,8 +6,15 @@ use Drips\Validator\IValidator;
 
 class Maxlength implements IValidator
 {
-    public static function validate($input, $length = 20)
+    protected $maxlength;
+
+    public function __construct($maxlength = 20)
     {
-        return strlen($input) <= $length;
+        $this->maxlength = $maxlength;
+    }
+
+    public function validate($input)
+    {
+        return strlen($input) <= $this->maxlength;
     }
 }

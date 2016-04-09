@@ -6,7 +6,7 @@ use Drips\Validator\IValidator;
 
 class Number implements IValidator
 {
-    public static function validate($input)
+    public function validate($input)
     {
         return is_numeric($input);
     }

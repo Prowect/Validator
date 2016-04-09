@@ -5,8 +5,15 @@ use Drips\Validator\IValidator;
 
 class InArray implements IValidator
 {
-    public static function validate($input, array $array = array())
+    protected $array = array();
+
+    public function __construct(array $array)
     {
-	    return in_array($input, $array);
+        $this->array = $array;
+    }
+
+    public function validate($input)
+    {
+	    return in_array($input, $this->array);
     }
 }

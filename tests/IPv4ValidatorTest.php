@@ -14,7 +14,8 @@ class IPv4ValidatorTest extends PHPUnit_Framework_TestCase
 	 */
 	public function testIPv4($ip, $result)
 	{
-	    $this->assertEquals(IPv4::validate($ip), $result);
+		$validator = new IPv4;
+	    $this->assertEquals($validator->validate($ip), $result);
 	}
 
     public function dataProvider()
