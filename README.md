@@ -61,7 +61,7 @@ Folgende Validators sind zurzeit implementiert:
 
 > Es ist zu beachten, dass jeder Validator über eine zugehörige `validate($input)`-Methode verfügt, mit der eine zu überprüfende Eingabe übergeben werden kann.
 
-> Die einzelnen Validator liefern jeweils `true` oder `false` als Ergebnis und befinden sich im Namespace `\Drips\Validator\validators`.
+> Die einzelnen Validators liefern jeweils `true` oder `false` als Ergebnis und befinden sich im Namespace `\Drips\Validator\validators`.
 
 ## Filtern
 
@@ -92,3 +92,8 @@ $output = $filter->filter($input);
 | **HtmlEntities** | Ersetzt bestimmte Zeichen durch die Verwendung der `htmlentities()` Funktion von PHP. | `new HtmlEntities;`
 | **StripTags**    | Entfernt HTML-Tags innerhalb eines Strings | `new StripTags;`
 | **Trim** | Entfernt überflüssige Leerzeichen (oder andere Zeichen) am Anfang und am Ende eines Strings. Standardmäßig werden Leerzeichen und so weiter entfernt, wie es mit der `trim()` Funktion von PHP üblich ist. Optional können auch andere Zeichen entfernt werden. | `new Trim($character = null)`;
+
+
+> Es ist zu beachten, dass jeder Filter über eine zugehörige `filter($input)`-Methode verfügt, mit der eine zu filternde Eingabe übergeben werden kann.
+
+> Die einzelnen Filter liefern jeweils den gefilterten Text als Ergebnis und befinden sich im Namespace `\Drips\Validator\filters`.
