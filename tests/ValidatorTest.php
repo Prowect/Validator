@@ -33,4 +33,24 @@ class ValidatorTest extends PHPUnit_Framework_TestCase
         $this->assertTrue((bool)array_product($validator->validate(3)));
         $this->assertFalse((bool)array_product($validator->validate(11)));
     }
+
+	public function testValidatorGet()
+	{
+		$validator = new Validator;
+		$this->assertEmpty($validator->getValidators());
+		$validator->add(new Required);
+		$this->assertNotEmpty($validator->getValidators());
+	}
+
+	public function testValidatorCombine()
+	{
+		$validator1 = new Validator;
+		$validator2 = new Validator;
+		$validator1->add(new Required);
+		$validator2->add(new Min(1));
+		$validator2->add(new Max(10));
+		$validator1->add($validator2);
+		$validators = $validator1->getValidators();
+		$this->assertEquals(count($validators), 3);
+	}
 }

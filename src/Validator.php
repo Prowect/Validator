@@ -8,7 +8,24 @@ class Validator implements IValidator
 
     public function add(IValidator $validator)
     {
-        $this->validators[] = $validator;
+        if($validator instanceof Validator){
+            $this->combine($validator);
+        } else {
+            $this->validators[] = $validator;
+        }
+    }
+
+    public function getValidators()
+    {
+        return $this->validators;
+    }
+
+    public function combine(Validator $validator)
+    {
+        $validators = $validator->getValidators();
+        foreach($validators as $validator){
+            $this->validators[] = $validator;
+        }
     }
 
     public function validate($input)

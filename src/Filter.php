@@ -8,7 +8,24 @@ class Filter implements IFilter
 
     public function add(IFilter $filter)
     {
-        $this->filters[] = $filter;
+        if($filter instanceof Filter){
+            $this->combine($filter);
+        } else {
+            $this->filters[] = $filter;
+        }
+    }
+
+    public function getFilters()
+    {
+        return $this->filters;
+    }
+
+    public function combine(Filter $filter)
+    {
+        $filters = $filter->getFilters();
+        foreach($filters as $filter){
+            $this->filters[] = $filter;
+        }
     }
 
     public function filter($input)
