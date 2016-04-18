@@ -5,8 +5,6 @@ namespace tests;
 use Drips\Validator\validators\IP;
 use PHPUnit_Framework_TestCase;
 
-include __DIR__.'/../vendor/autoload.php';
-
 class IPValidatorTest extends PHPUnit_Framework_TestCase
 {
 	/**

@@ -5,8 +5,6 @@ namespace tests;
 use Drips\Validator\validators\IPv4;
 use PHPUnit_Framework_TestCase;
 
-include __DIR__.'/../vendor/autoload.php';
-
 class IPv4ValidatorTest extends PHPUnit_Framework_TestCase
 {
 	/**

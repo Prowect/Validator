@@ -7,8 +7,6 @@ use Drips\Validator\filters\StripTags;
 use Drips\Validator\filters\Trim;
 use PHPUnit_Framework_TestCase;
 
-include __DIR__.'/../vendor/autoload.php';
-
 class FilterTest extends PHPUnit_Framework_TestCase
 {
 	public function testFilter()

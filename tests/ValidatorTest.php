@@ -8,8 +8,6 @@ use Drips\Validator\validators\Min;
 use Drips\Validator\validators\Max;
 use PHPUnit_Framework_TestCase;
 
-include __DIR__.'/../vendor/autoload.php';
-
 class ValidatorTest extends PHPUnit_Framework_TestCase
 {
 	public function testValidatorRequired()

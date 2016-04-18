@@ -5,8 +5,6 @@ namespace tests;
 use Drips\Validator\validators\Email;
 use PHPUnit_Framework_TestCase;
 
-include __DIR__.'/../vendor/autoload.php';
-
 class EmailValidatorTest extends PHPUnit_Framework_TestCase
 {
 	/**

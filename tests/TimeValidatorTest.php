@@ -5,7 +5,6 @@ namespace tests;
 use Drips\Validator\validators\Time;
 use PHPUnit_Framework_TestCase;
 
-include __DIR__.'/../vendor/autoload.php';
 date_default_timezone_set('Europe/Berlin');
 
 class TimeValidatorTest extends PHPUnit_Framework_TestCase
